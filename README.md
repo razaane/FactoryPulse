@@ -8,9 +8,7 @@ Application web de suivi des machines industrielles développée avec React.js e
 - Vite
 - React Router
 - JavaScript
-
 ## Installation
-
 ```bash
 npm install
 npm run dev
