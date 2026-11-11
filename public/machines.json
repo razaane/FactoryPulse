@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "CNC Alpha",
+    "zone": "Atelier A",
+    "status": "En fonctionnement",
+    "production": 250
+  },
+  {
+    "id": 2,
+    "name": "Presse Beta",
+    "zone": "Atelier A",
+    "status": "À l'arrêt",
+    "production": 0
+  },
+  {
+    "id": 3,
+    "name": "Robot Gamma",
+    "zone": "Atelier B",
+    "status": "En panne",
+    "production": 0
+  },
+  {
+    "id": 4,
+    "name": "CNC Delta",
+    "zone": "Atelier B",
+    "status": "En fonctionnement",
+    "production": 320
+  },
+  {
+    "id": 5,
+    "name": "Machine Epsilon",
+    "zone": "Atelier C",
+    "status": "En fonctionnement",
+    "production": 180
+  },
+  {
+    "id": 6,
+    "name": "Presse Zeta",
+    "zone": "Atelier C",
+    "status": "En panne",
+    "production": 0
+  },
+  {
+    "id": 7,
+    "name": "Robot Eta",
+    "zone": "Atelier D",
+    "status": "À l'arrêt",
+    "production": 0
+  },
+  {
+    "id": 8,
+    "name": "CNC Theta",
+    "zone": "Atelier D",
+    "status": "En fonctionnement",
+    "production": 410
+  }
+]
