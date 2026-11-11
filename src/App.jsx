@@ -1,4 +1,7 @@
+
 import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   const [machines, setMachines] = useState([]);
@@ -6,22 +9,24 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/machines.json")
-      .then((response) => {
+    const loadMachines = async () => {
+      try {
+        const response = await fetch("/machines.json");
+
         if (!response.ok) {
           throw new Error("Impossible de charger les machines");
         }
 
-        return response.json();
-      })
-      .then((data) => {
+        const data = await response.json();
         setMachines(data);
-        setLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         setError(error.message);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    loadMachines();
   }, []);
 
   if (loading) {
@@ -33,10 +38,25 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>FactoryPulse</h1>
-      <p>Nombre de machines : {machines.length}</p>
-    </div>
+    <BrowserRouter>
+      <div className="app-layout">
+        <Sidebar />
+
+        <main className="main-content">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div>
+                  <h1>FactoryPulse</h1>
+                  <p>Nombre de machines : {machines.length}</p>
+                </div>
+              }
+            />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 
