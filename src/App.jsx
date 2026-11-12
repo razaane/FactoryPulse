@@ -1,7 +1,11 @@
 
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
+import Dashboard from "./pages/Dashboard";
+import Machines from "./pages/Machines";
+import AddMachine from "./pages/AddMachine";
 
 function App() {
   const [machines, setMachines] = useState([]);
@@ -40,18 +44,23 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app-layout">
+        
         <Sidebar />
 
         <main className="main-content">
+          <Header />
           <Routes>
             <Route
               path="/"
-              element={
-                <div>
-                  <h1>FactoryPulse</h1>
-                  <p>Nombre de machines : {machines.length}</p>
-                </div>
-              }
+              element={<Dashboard machines={machines}/>}
+            />
+            <Route
+              path="/machines"
+              element ={<Machines machines={machines} />}
+            />
+            <Route
+              path="/machines/add"
+              element ={<AddMachine/>}
             />
           </Routes>
         </main>

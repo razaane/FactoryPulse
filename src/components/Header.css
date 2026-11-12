@@ -1,0 +1,10 @@
+.header {
+  padding: 20px 30px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #11021D;
+}

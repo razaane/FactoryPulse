@@ -4,7 +4,9 @@
 
 body {
   margin: 0;
+  font-family: "Space Grotesk", sans-serif;
 }
+
 
 .app-layout {
   display: flex;
