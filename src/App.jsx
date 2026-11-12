@@ -41,6 +41,27 @@ function App() {
     return <p>{error}</p>;
   }
 
+
+  const handleStatusChange = (id, newStatus) => {
+    setMachines((previousMachines) =>
+      previousMachines.map((machine) =>
+        machine.id === id
+          ? { ...machine, status: newStatus }
+          : machine
+      )
+    );
+  };
+
+  const handleDelete = (id) => {
+    const confirmed = window.confirm("Voulez-vous supprimer cette machine ?");
+
+    if (confirmed) {
+      setMachines((previousMachines) =>
+        previousMachines.filter((machine) => machine.id !== id)
+      );
+    }
+  };
+
   return (
     <BrowserRouter>
       <div className="app-layout">
@@ -56,7 +77,10 @@ function App() {
             />
             <Route
               path="/machines"
-              element ={<Machines machines={machines} />}
+              element ={
+                <Machines machines={machines}
+                onStatusChange={handleStatusChange} onDelete={handleDelete}/>
+              }
             />
             <Route
               path="/machines/add"
