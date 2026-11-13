@@ -1,0 +1,87 @@
+
+.add-machine-page {
+  padding: 20px 28px;
+}
+
+.add-machine-form {
+  width: 614px;
+  min-height: 615px;
+  padding: 45px 50px;
+  background-color: rgba(139, 55, 212, 0.5);
+  border: 3px solid #8B2BE2;
+  border-radius: 20px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.add-machine-form h2 {
+  margin: 0 0 22px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+}
+
+.form-group input {
+  width: 100%;
+  height: 52px;
+  padding: 0 12px;
+  background-color: rgba(139, 55, 212, 0.5);
+  border: 2px solid #11021D;
+  border-radius: 12px;
+  outline: none;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.form-group select {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  background-color: rgba(165, 227, 13, 0.5);
+  border: 2px solid #11021D;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.save-machine-button {
+  width: 100%;
+  height: 52px;
+  margin-top: 18px;
+  background-color: #A5E30D;
+  border: none;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.save-machine-button:hover {
+  filter: brightness(0.95);
+}
+
+@media (max-width: 750px) {
+  .add-machine-page {
+    padding: 20px 10px;
+  }
+
+  .add-machine-form {
+    width: 100%;
+    padding: 30px 20px;
+  }
+}
