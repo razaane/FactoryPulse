@@ -62,6 +62,20 @@ function App() {
     }
   };
 
+
+
+const handleAddMachine = (newMachine) => {
+  setMachines((previousMachines) => {
+    const newId =
+      Math.max(0, ...previousMachines.map((machine) => machine.id)) + 1;
+
+    return [
+      ...previousMachines,
+      { ...newMachine, id: newId },
+    ];
+  });
+};
+
   return (
     <BrowserRouter>
       <div className="app-layout">
@@ -84,7 +98,7 @@ function App() {
             />
             <Route
               path="/machines/add"
-              element ={<AddMachine/>}
+              element={<AddMachine onAddMachine={handleAddMachine} />}
             />
           </Routes>
         </main>
